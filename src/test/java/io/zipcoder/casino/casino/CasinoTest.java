@@ -10,6 +10,7 @@ public class CasinoTest {
     @Test
     public void getInstanceTest(){
 
+
     }
 
 

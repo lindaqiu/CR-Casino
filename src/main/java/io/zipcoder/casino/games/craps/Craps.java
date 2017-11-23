@@ -21,6 +21,7 @@ public class Craps implements Gamble, Game {
 
     public Craps(){
         ArrayList<Integer> twoToTwelve = new ArrayList<>();
+
         for (int i=2; i<13; i++){
             twoToTwelve.add(i);
         }
@@ -50,9 +51,11 @@ public class Craps implements Gamble, Game {
     public Double settleBet(Double winnings) {
         return (settleBet(winnings, mainPot));
     }
+
     private Double settleBet(Double winnings, MoneyContainer moneyContainer){
         return (moneyContainer.takeOutMoney(winnings));
     }
+
     public Double settleSideBet(Double winnings){
         return (settleBet(winnings, sidePot));
     }
@@ -72,16 +75,19 @@ public class Craps implements Gamble, Game {
     public void determineFirstRoller(){
         isPlayerTurn=(dice.rollDie()-dice.rollDie()>0);//Player vs House, highest goes first, house wins tie
     }
+
     public void changePlayerTurn(){
         isPlayerTurn=!isPlayerTurn;
         resetTurn();
     }
+
     public void resetTurn() {
         numberRolled=0;
         point=0;
     }
 
     public boolean getPlayerTurn(){return isPlayerTurn;}
+
 
     public int getPoint(){return point;}
     public String getPair(){
@@ -94,6 +100,9 @@ public class Craps implements Gamble, Game {
     public MoneyContainer getMainPot() {
         return mainPot;
     }
+
+
+
 
     public Integer initialThrow(){ //returns -1 if 2/3/12
                                     // 1 if 7/11,
@@ -122,6 +131,7 @@ public class Craps implements Gamble, Game {
         }
 
     }
+
     public Integer secondaryThrow(){//returns -1 if crapped out,
                                     //returns 1 if point met
                                     //returns 0 if nothing met
@@ -169,6 +179,7 @@ public class Craps implements Gamble, Game {
 
         return returnMe;
     }
+
     @Override
     public boolean play(String userInput) {
         return ("Y".equalsIgnoreCase(userInput));

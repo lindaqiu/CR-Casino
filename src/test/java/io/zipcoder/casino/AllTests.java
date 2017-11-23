@@ -23,7 +23,7 @@ import org.junit.runners.Suite;
         BlackJackTest.class,
         BlackJackPlayerTest.class,
         CrapsTest.class,
-        CrapsPlayerTest.class,
+//       CrapsPlayerTest.class,
         GoFishTest.class,
         GoFishPlayerTest.class,
         HandTest.class,
